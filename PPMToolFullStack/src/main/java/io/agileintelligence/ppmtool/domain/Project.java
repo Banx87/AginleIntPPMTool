@@ -3,8 +3,7 @@ package io.agileintelligence.ppmtool.domain;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.Date;
 
 @Entity
@@ -25,16 +24,16 @@ public class Project {
     @NotBlank(message = "Project description cannot be blank")
     private String description;
 
-    @JsonFormat(pattern = "dd-mm-yyyy")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private Date start_date;
 
-    @JsonFormat(pattern = "dd-mm-yyyy")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private Date end_date;
 
-    @JsonFormat(pattern = "dd-mm-yyyy")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private Date created_at;
 
-    @JsonFormat(pattern = "dd-mm-yyyy")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private Date updated_at;
 
     public Project() {
