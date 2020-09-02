@@ -1,6 +1,7 @@
 package io.agileintelligence.ppmtool.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Getter;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -10,10 +11,11 @@ import java.util.Date;
 public class Project {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotBlank(message = "Project name is required")
+    @NotEmpty(message = "No empty")
     private String projectName;
 
     @NotBlank(message = "Project identifier is required")
